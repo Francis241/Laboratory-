@@ -1,0 +1,63 @@
+class Shape {
+    double radius;
+    double height;
+
+    /**
+     * Constructs a Shape object with the specified radius and height.
+     *
+     * @param radius the radius of the shape
+     * @param height the height of the shape
+     */
+    public Shape(double radius, double height) {
+        this.radius = radius;
+        this.height = height;
+    }
+}
+
+class Cylinder extends Shape {
+    /**
+     * Constructs a Cylinder object with the specified radius and height.
+     *
+     * @param radius the radius of the cylinder
+     * @param height the height of the cylinder
+     */
+    public Cylinder(double radius, double height) {
+        super(radius, height);
+    }
+
+    /**
+     * Calculates the area of the cylinder.
+     *
+     * @return the area of the cylinder
+     */
+    public double calculateArea() {
+        return 2 * Math.PI * radius * radius + 2 * Math.PI * radius * height;
+    }
+
+    /**
+     * Calculates the volume of the cylinder.
+     *
+     * @return the volume of the cylinder
+     */
+    public double calculateVolume() {
+        return Math.PI * radius * radius * height;
+    }
+}
+
+public class CylinderCalculator {
+    public static void main(String[] args) {
+        double radius = 3.0;
+        double height = 8.0;
+
+        // Create a Cylinder object with the specified radius and height
+        Cylinder cylinder = new Cylinder(radius, height);
+
+        // Calculate the area and volume of the cylinder
+        double area = cylinder.calculateArea();
+        double volume = cylinder.calculateVolume();
+
+        // Print the results to the console
+        System.out.println("Area of the cylinder: " + area);
+        System.out.println("Volume of the cylinder: " + volume);
+    }
+}
